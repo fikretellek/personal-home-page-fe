@@ -1,0 +1,291 @@
+/* =================
+  WRITE YOUR CSS HERE.
+  Check the ⌄ for help with formatting and validating your code.
+  You must write some CSS to complete this challenge.
+   ===================
+*/
+
+body {
+  margin: none;
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 0.3em;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    rgba(153, 202, 204, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(208, 221, 221, 1) 100%
+  );
+  animation-name: colors;
+
+  animation-duration: 5s;
+}
+
+@keyframes colors {
+  0% {
+    background: black;
+  }
+
+  90% {
+    background: black;
+  }
+  100% {
+    background: linear-gradient(
+      90deg,
+      rgba(153, 202, 204, 1) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(208, 221, 221, 1) 100%
+    );
+  }
+}
+
+@keyframes logo-move {
+  0% {
+    left: 50%;
+
+    opacity: 0;
+    color: white;
+  }
+  30% {
+    left: 50%;
+
+    opacity: 1;
+    color: white;
+  }
+
+  90% {
+    left: 100px;
+
+    color: white;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+header {
+  margin: 50px 100px;
+}
+main {
+  margin: 50px;
+}
+footer {
+  margin: 50px;
+}
+.c-site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: 0px;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+  animation-name: logo-move;
+  animation-duration: 5s;
+}
+.nav-top {
+  margin: 0px 0px;
+}
+.nav-btn {
+  border: none;
+  background-color: #5f9ea0;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 40px;
+  margin: 0px 0px;
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 0.1em;
+}
+.resize:hover {
+  animation-name: btn-resize;
+  animation-duration: 1s;
+  background-color: black;
+}
+
+@keyframes btn-resize {
+  0% {
+    padding: 10px 15px;
+  }
+  80% {
+    font-size: 30px;
+    padding: 15px 20px;
+    font-size: 13px;
+  }
+  100% {
+    font-size: 10px;
+    padding: 10px 15px;
+  }
+}
+
+@keyframes btn-bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounce:hover {
+  animation-name: btn-bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background-color: black;
+}
+
+.dvider {
+  margin: 50px 20px;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: #5f9ea0;
+  border: none;
+}
+
+.sub-dvider {
+  padding: 2px;
+  border-radius: 10px;
+  background-color: #5f9ea0;
+  border: none;
+  width: 50%;
+  display: block;
+  margin: 50px auto;
+}
+
+.pp-img {
+  width: 30%;
+  border-radius: 100%;
+  display: block;
+  margin: 30px auto;
+  border: 4px solid #5f9ea0;
+}
+.pp-img:hover {
+  animation-name: pp-resize;
+  animation-duration: 2s;
+}
+
+.invisible {
+  animation-name: invisible;
+  animation-duration: 7s;
+}
+@keyframes pp-resize {
+  0% {
+    width: 30%;
+  }
+  70% {
+    width: 50%;
+  }
+
+  90% {
+    width: 30%;
+  }
+}
+
+@keyframes invisible {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+}
+@keyframes invisible-pp {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  30% {
+    opacity: 0;
+    width: 0%;
+  }
+
+  90% {
+    opacity: 1;
+    width: 50%;
+  }
+
+  100% {
+    opacity: 1;
+    width: 30%;
+  }
+}
+
+.invisible-pp {
+  animation-name: invisible-pp;
+  animation-duration: 5s;
+}
+
+.about-me-p {
+  text-align: justify;
+  width: 50%;
+  letter-spacing: 0.15em;
+  line-height: 2em;
+  margin: 10px auto;
+}
+#about-me-p1 {
+  text-align: center;
+}
+.headers {
+  margin: 30px;
+  font-size: 25px;
+
+  text-align: center;
+}
+.headers:hover {
+  text-shadow: black 0px 0 10px;
+  color: white;
+}
+.logo:hover {
+  text-shadow: black 0px 0 10px;
+  color: white;
+}
+
+iframe {
+  border-radius: 30px;
+  border: 4px solid #5f9ea0;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+  text-decoration: underline;
+  color: #5f9ea0;
+}
+.link:hover {
+  color: white;
+  background-color: #5f9ea0;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.footer-last {
+  text-align: center;
+  letter-spacing: 0.15em;
+  line-height: 0.5em;
+  margin: 0px;
+}
+footer {
+  margin: 50px 100px;
+}
+
+/* don't edit this */
+.jest-lite-report__status--pass {
+  background: var(--color-pass);
+}
+.jest-lite-report__errors {
+  display: none;
+}
