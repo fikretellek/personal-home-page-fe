@@ -26,6 +26,20 @@ const getHeader = document.querySelectorAll("header"),
   getImage = document.querySelectorAll("img"),
   getWords = document.body.innerText;
 
+document.getElementById('day').addEventListener('click', (event) => {
+  let element_main = document.getElementById('main');
+  element_main.style.backgroundColor = '#ffffff';
+  element_main.style.color = '#000000';
+
+});
+
+document.getElementById('night').addEventListener('click', (event) => {
+  let element_main2 = document.getElementById('main');
+  element_main2.style.backgroundColor = '#000000';
+  element_main2.style.color = '#ffffff';
+
+});
+
 /* =================
    ASSERTIONS 
    These are the things we check are true about your page.
