@@ -251,6 +251,33 @@ iframe {
   border: 4px solid #5f9ea0;
 }
 
+.commentBlock{
+  border-radius: 30px;
+  border: 4px solid #5f9ea0;
+}
+
+.nameSize{
+  padding: 6px 15px;
+}
+
+
+
+.commentSize{
+  width: 335px;
+  height: 120px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.commentsArea{
+  width: 1000px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: start;
+}
+
+
 .footer-nav {
   display: flex;
   justify-content: space-between;

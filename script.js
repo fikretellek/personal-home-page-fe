@@ -1,82 +1,82 @@
-/* =================
-  TESTS, LOOK AT THESE
-  Reading tests will always help you discover your requirements.
-  You can make this window bigger. 
-   ===================
-*/
+var images;
 
-const {
-  core: { test, expect, run },
-  prettify
-} = window.jestLite;
+// Describe this function...
+function showNextImage() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_shownImage2 = document.getElementById('shownImage');
+  images.push(images.shift());
+  element_shownImage2.setAttribute("src", images[0]);
+}
 
-/* =================
-  FIND ELEMENTS
-  These are all the elements we will look for.
-   ===================
-*/
-const getHeader = document.querySelectorAll("header"),
-  getH1 = document.querySelectorAll("h1"),
-  getSiteHeader = document.querySelectorAll(".c-site-header"),
-  getAria = document.querySelectorAll('nav[aria-label="Main Site Links."]'),
-  getMain = document.querySelectorAll("main"),
-  getFooter = document.querySelectorAll("footer"),
-  getSiteFooter = document.querySelectorAll(".c-site-footer"),
-  getIFrame = document.querySelectorAll("iframe"),
-  getImage = document.querySelectorAll("img"),
-  getWords = document.body.innerText;
+// Describe this function...
+function showPreviousImage() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_shownImage3 = document.getElementById('shownImage');
+  images.unshift(images.pop());
+  element_shownImage3.setAttribute("src", images[0]);
+}
 
-document.getElementById('day').addEventListener('click', (event) => {
-  let element_main = document.getElementById('main');
-  element_main.style.backgroundColor = '#ffffff';
-  element_main.style.color = '#000000';
+
+images = ['https://i1.sndcdn.com/artworks-000374202633-pqm4gy-t500x500.jpg', 'https://cdn.wallpapersafari.com/86/63/9jt7aq.jpg', 'https://live.staticflickr.com/65535/49389103952_ff4b2cf256.jpg'];
+let element_shownImage = document.getElementById('shownImage');
+element_shownImage.setAttribute("src", images[0]);
+
+
+document.getElementById('btnNext').addEventListener('click', (event) => {
+  showNextImage();
 
 });
 
-document.getElementById('night').addEventListener('click', (event) => {
-  let element_main2 = document.getElementById('main');
-  element_main2.style.backgroundColor = '#000000';
-  element_main2.style.color = '#ffffff';
+document.getElementById('btnPrevious').addEventListener('click', (event) => {
+  showPreviousImage();
 
 });
 
-/* =================
-   ASSERTIONS 
-   These are the things we check are true about your page.
-   Read and update your HTML to discover the requirements.
-   The tests will run every time you update your code.
-   ===================
-*/
-test("There is at least one header element", () => {
-  expect(getHeader.length).toBeGreaterThanOrEqual(1);
-});
-test("There is at least one h1", () => {
-  expect(getH1.length).toBeGreaterThanOrEqual(1);
-});
-test("There is only one header element with the class c-site-header", () => {
-  expect(getSiteHeader.length).toBe(1);
-});
-test("There is a nav element with an aria-label of Main Site Links.", () => {
-  expect(getAria.length).toBeGreaterThanOrEqual(1);
-});
-test("There is only one main element", () => {
-  expect(getMain.length).toBe(1);
-});
-test("There is at least one footer element", () => {
-  expect(getFooter.length).toBeGreaterThanOrEqual(1);
-});
-test("There is only one footer element with the class c-site-footer", () => {
-  expect(getSiteFooter.length).toBe(1);
-});
-test("There is embedded video", () => {
-  expect(getIFrame.length).toBeGreaterThanOrEqual(1);
-});
-test("There is at least one image", () => {
-  expect(getImage.length).toBeGreaterThanOrEqual(1);
-});
-test("There are at least 500 words on the page", () => {
-  expect(getWords.length).toBeGreaterThanOrEqual(500);
-});
 
-const console = document.getElementById("tests");
-prettify.toHTML(run(), console);
+
+var comments, names, item;
+
+function convertToNumber(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return 0
+  } else {
+    return number_value
+  }
+}
+
+// Describe this function...
+function showComments() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_commentList = document.getElementById('commentList');
+  element_commentList.replaceChildren();
+  names.forEach((item) => {
+    let new_li = document.createElement('li');
+    new_li.innerText = names[0];
+    names.push(names.shift());
+    let new_span = document.createElement('span');
+    new_span.innerText = ' : ';
+
+    new_li.appendChild(new_span);
+    let new_span2 = document.createElement('span');
+    new_span2.innerText = comments[0];
+    comments.push(comments.shift());
+
+    new_li.appendChild(new_span2);
+
+    element_commentList.appendChild(new_li);
+  });
+}
+
+
+comments = [];
+names = [];
+
+
+document.getElementById('btnAddComment').addEventListener('click', (event) => {
+  names.push(document.getElementById('inputName').value);
+  comments.push(document.getElementById('inputComment').value);
+  showComments();
+
+});
